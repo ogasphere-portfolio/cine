@@ -29,7 +29,7 @@
             <a href="index.php">Accueil</a>
           </li>
           <li class="header__menu-item">
-            <a href="#">Films en salle</a>
+            <a href="salle.php">Films en salle</a>
           </li>
           <li class="header__menu-item">
             <a href="tarifs.php">Tarifs</a>

@@ -45,6 +45,19 @@ $films = [
         }
     ?>
 
+<?php
+        $numeroElement = 0; 
+        while ($numeroElement <= 4) :
+            ?>
+            <li>
+                <?php echo $films[$numeroElement]; ?>
+            </li>
+            
+            <?php
+            $numeroElement = $numeroElement + 1;
+        endwhile;
+    ?>
+
     <?php
         // La boucle for est composée de 3 éléments obligatoires
         // l'initialistation
