@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,13 +26,13 @@
       <nav class="header__menu">
         <ul class="header__menu-container">
           <li class="header__menu-item header__menu-item--active">
-            <a href="index.html">Accueil</a>
+            <a href="index.php">Accueil</a>
           </li>
           <li class="header__menu-item">
-            <a href="#">En salle</a>
+            <a href="#">Films en salle</a>
           </li>
           <li class="header__menu-item">
-            <a href="tarifs.html">Tarifs</a>
+            <a href="tarifs.php">Tarifs</a>
           </li>
           <li class="header__menu-item">
             <a href="#">Nous contacter</a>
@@ -45,12 +43,3 @@
     </div>
   </header>
   <main class="main-container">
-    <section>
-      <p>TODO</p>
-    </section>
-  </main>
-  <footer class="footer">
-    Cinéma Rodia - 42, avenue Foch, Haut-Cloques &copy; Tous droits réservés
-  </footer>
-</body>
-</html>
