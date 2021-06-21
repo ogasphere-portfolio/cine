@@ -7,8 +7,19 @@ $tarifPlein = 8.3;
 $tarifReduit = 6.8;
 $tarifEnfant = 4.5;
 $tarifSupplement3D = 1;
+
+// On contruit un tableau associatif qui contient pour chaque entrée
+// - la clef correspond au nom du tarif
+// - la valeur correspond au montant du tarif  
+$tarifs = [
+    "Tarif Plein"   => 8.3,
+    "Tarif Réduit"  => 6.8,
+    "Tarif Enfant"  => 4.5,
+    "Supplément 3D" => 1 
+];
+
 $reductionAbo = 10;
-$reductionAbo25 = 30;
+$reductionAbo25 = 20;
 ?>
 
 <section>
@@ -24,19 +35,27 @@ $reductionAbo25 = 30;
             <ul>
                 <li class="prices__item">
                     <span class="prices__item-desc">Tarif Plein</span> 
-                    <span class="prices__item-value"><?= $tarifPlein ?></span> &euro;
+                    <span class="prices__item-value">
+                        <?= $tarifs["Tarif Plein"]; ?>
+                    </span> &euro;
                 </li>
                 <li class="prices__item">
                     <span class="prices__item-desc">Tarif Réduit</span> 
-                    <span class="prices__item-value"><?= $tarifReduit ?></span> &euro;
+                    <span class="prices__item-value">
+                        <?= $tarifs["Tarif Réduit"]; ?>
+                    </span> &euro;
                 </li>
                 <li class="prices__item">
                     <span class="prices__item-desc">Tarif Enfant</span> 
-                    <span class="prices__item-value"><?= $tarifEnfant ?></span> &euro;
+                    <span class="prices__item-value">
+                        <?= $tarifs["Tarif Enfant"]; ?>
+                    </span> &euro;
                 </li>
                 <li class="prices__item">
                     <span class="prices__item-desc">Supplément 3D</span> 
-                    <span class="prices__item-value"><?= $tarifSupplement3D ?></span> &euro;
+                    <span class="prices__item-value">
+                        <?= $tarifs["Supplément 3D"]; ?>
+                    </span> &euro;
                 </li>
             </ul>
         </div>
@@ -75,8 +94,6 @@ $reductionAbo25 = 30;
 <section>
     <h2 class="page__title">Tarifs selon votre âge</h2>
 
-
-    
     <ul>
         <?php
             // Je voudrais répéter le code suivant 99 fois
