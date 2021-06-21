@@ -1,5 +1,14 @@
 <?php
 require 'includes/header.php';
+// Je définis les variables utilisées pour 
+// - afficher les tarifs
+// - calculer les tarifs
+$tarifPlein = 8.3;
+$tarifReduit = 6.8;
+$tarifEnfant = 4.5;
+$tarifSupplement3D = 1;
+$reductionAbo = 10;
+$reductionAbo25 = 30;
 ?>
 
 <section>
@@ -9,23 +18,27 @@ require 'includes/header.php';
     <div class="prices__lists">
 
         <div class="prices__list">
-        <h3 class="prices__list-title">
-            A l'unité
-        </h3>
-        <ul>
-            <li class="prices__item">
-            <span class="prices__item-desc">Tarif Plein</span> <span class="prices__item-value">8,30</span> &euro;
-            </li>
-            <li class="prices__item">
-            <span class="prices__item-desc">Tarif Réduit</span> <span class="prices__item-value">6,80</span> &euro;
-            </li>
-            <li class="prices__item">
-            <span class="prices__item-desc">Tarif Enfant</span> <span class="prices__item-value">4,50</span> &euro;
-            </li>
-            <li class="prices__item">
-            <span class="prices__item-desc">Supplément 3D</span> <span class="prices__item-value">1,00</span> &euro;
-            </li>
-        </ul>
+            <h3 class="prices__list-title">
+                A l'unité
+            </h3>
+            <ul>
+                <li class="prices__item">
+                    <span class="prices__item-desc">Tarif Plein</span> 
+                    <span class="prices__item-value"><?= $tarifPlein ?></span> &euro;
+                </li>
+                <li class="prices__item">
+                    <span class="prices__item-desc">Tarif Réduit</span> 
+                    <span class="prices__item-value"><?= $tarifReduit ?></span> &euro;
+                </li>
+                <li class="prices__item">
+                    <span class="prices__item-desc">Tarif Enfant</span> 
+                    <span class="prices__item-value"><?= $tarifEnfant ?></span> &euro;
+                </li>
+                <li class="prices__item">
+                    <span class="prices__item-desc">Supplément 3D</span> 
+                    <span class="prices__item-value"><?= $tarifSupplement3D ?></span> &euro;
+                </li>
+            </ul>
         </div>
 
         
@@ -35,10 +48,12 @@ require 'includes/header.php';
         </h3>
         <ul>
             <li class="prices__item">
-            <span class="prices__item-desc">5 places</span> <span class="prices__item-value">-10%</span>
+            <span class="prices__item-desc">5 places</span> 
+            <span class="prices__item-value">-<?php echo $reductionAbo ?>%</span>
             </li>
             <li class="prices__item">
-            <span class="prices__item-desc">5 places -25ans </span> <span class="prices__item-value">-20%</span>
+            <span class="prices__item-desc">5 places -25ans </span> 
+            <span class="prices__item-value">-<?= $reductionAbo25; ?>%</span>
             </li>
         </ul>
         </div>
@@ -70,9 +85,7 @@ require 'includes/header.php';
 
             // Définir une valeur de départ pour la variable $age
             $age = 1;
-            $tarifPlein = 8.3;
-            $tarifReduit = 6.8;
-            $tarifEnfant = 4.5;
+
             $montant = 0;
             while ($age <= 99) {
 
@@ -97,7 +110,7 @@ require 'includes/header.php';
                 if ($age >= 25) {
                     // On stocke dans une nouvelle variable $montantAbo le montant qui sera
                     // $montant - 10%
-                    $montantAbo = $montant - ($montant / 100 * 10);
+                    $montantAbo = $montant - ($montant / 100 * $reductionAbo);
                     // alternative
                     // $montantAbo = $montant * 0.9;
                 }
@@ -105,7 +118,7 @@ require 'includes/header.php';
                 else {
                     // On stocke dans une nouvelle variable $montantAbo le montant qui sera
                     // $montant - 20%
-                    $montantAbo = $montant - ($montant / 100 * 20);
+                    $montantAbo = $montant - ($montant / 100 * $reductionAbo25);
                     // 5 places -25ans -20%
                     // Si elle a moins de 25 ans, la tarif sera le montant précédent
                     // moins 20%
