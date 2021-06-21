@@ -29,7 +29,10 @@
             <a href="index.php">Accueil</a>
           </li>
           <li class="header__menu-item">
-            <a href="salle.php">Films en salle</a>
+            <a href="salle.php">Films</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="listeSalles.php">Salles</a>
           </li>
           <li class="header__menu-item">
             <a href="tarifs.php">Tarifs</a>
