@@ -31,7 +31,7 @@ require 'includes/header.php';
         
         <div class="prices__list">
         <h3 class="prices__list-title">
-            A l'unité
+            Cartes d'abonnement
         </h3>
         <ul>
             <li class="prices__item">
@@ -76,9 +76,8 @@ require 'includes/header.php';
             $montant = 0;
             while ($age <= 99) {
 
-        ?>
-        <li>
-            <?php
+                // Je calcule le tarif à l'unité 
+                // de la place en fonction de l'age
                 if ($age < 14) {
                     $montant = $tarifEnfant;
                 } elseif ($age < 16 || $age > 60) {     
@@ -86,20 +85,54 @@ require 'includes/header.php';
                 } else {
                     $montant = $tarifPlein;
                 }
-            ?>
-            <strong>
-                <?php echo $age; ?> an(s)
-            </strong>
-            , montant à payer : 
-            <strong>
-                <?= $montant; ?>€
-            </strong>
-        </li>
-        <?php
-            
-            $age = $age + 1;
-        }// fermeture de la boucle while
-        
+
+                // Calculer le tarif de la place si la personne utilise
+                // sa carte d'abonnement
+
+                // 5 places -10%
+                // Si la personne utilise sa carte, le tarif sera celui calculé
+                // précédement moins 10%, dans le cas ou elle a plus de 25 ans
+                
+                // Si $age est >= à 25
+                if ($age >= 25) {
+                    // On stocke dans une nouvelle variable $montantAbo le montant qui sera
+                    // $montant - 10%
+                    $montantAbo = $montant - ($montant / 100 * 10);
+                    // alternative
+                    // $montantAbo = $montant * 0.9;
+                }
+                // Sinon
+                else {
+                    // On stocke dans une nouvelle variable $montantAbo le montant qui sera
+                    // $montant - 20%
+                    $montantAbo = $montant - ($montant / 100 * 20);
+                    // 5 places -25ans -20%
+                    // Si elle a moins de 25 ans, la tarif sera le montant précédent
+                    // moins 20%
+                }
+                // var_dump($montantAbo);
+     
+                ?>
+                <li>
+                    <strong>
+                        <?php echo $age; ?> an(s)
+                    </strong>
+                    , montant à payer : 
+                    <strong>
+                        <?= $montant; ?>€
+                    </strong>
+
+                    Tarif avec abonnement :
+                    
+                    <strong>
+                        <?= $montantAbo; ?>€
+                    </strong>
+
+                </li>
+                <?php
+                
+                $age = $age + 1;
+            } // fermeture de la boucle while
         ?>
 
     </ul>
