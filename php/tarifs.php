@@ -15,6 +15,7 @@ $tarifs = [
     "Tarif Plein"   => 8.3,
     "Tarif Réduit"  => 6.8,
     "Tarif Enfant"  => 4.5,
+    "Tarif Senior"  => 2.5,
     "Supplément 3D" => 1 
 ];
 
@@ -33,30 +34,23 @@ $reductionAbo25 = 20;
                 A l'unité
             </h3>
             <ul>
-                <li class="prices__item">
-                    <span class="prices__item-desc">Tarif Plein</span> 
-                    <span class="prices__item-value">
-                        <?= $tarifs["Tarif Plein"]; ?>
-                    </span> &euro;
-                </li>
-                <li class="prices__item">
-                    <span class="prices__item-desc">Tarif Réduit</span> 
-                    <span class="prices__item-value">
-                        <?= $tarifs["Tarif Réduit"]; ?>
-                    </span> &euro;
-                </li>
-                <li class="prices__item">
-                    <span class="prices__item-desc">Tarif Enfant</span> 
-                    <span class="prices__item-value">
-                        <?= $tarifs["Tarif Enfant"]; ?>
-                    </span> &euro;
-                </li>
-                <li class="prices__item">
-                    <span class="prices__item-desc">Supplément 3D</span> 
-                    <span class="prices__item-value">
-                        <?= $tarifs["Supplément 3D"]; ?>
-                    </span> &euro;
-                </li>
+                <?php
+                // début de la boucle foreach
+                foreach ($tarifs as $nomTarif => $montantTarif) {
+                    ?>
+                    <li class="prices__item toto">
+                        <span class="prices__item-desc">
+                            <?php echo $nomTarif; ?>
+                        </span>
+                        <span class="prices__item-value">
+                            <?php echo $montantTarif; ?>
+                        </span> &euro;
+                    </li>
+                    <?php
+                }
+                // fin de la boucle foreach
+                ?>
+
             </ul>
         </div>
 
