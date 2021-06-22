@@ -5,7 +5,8 @@
         'Athéna', // 0
         'Dyonisos', // 1
         'Hadès', // 2
-        'Zeus' // 3
+        'Zeus', // 3
+        'Arès' // 4
     ];
 ?>
 
@@ -17,10 +18,26 @@
     <ul>
         <?php
         // début de la boucle
-        for ($index = 0; $index <= 3 ; $index++) { 
+        for ($index = 0; $index < count($rooms) ; $index++) { 
             ?>
             <li>
                 <?php echo $rooms[$index]; ?>
+            </li>
+            <?php
+        }
+        // fin de la boucle
+        ?>
+    </ul>
+
+    <hr>
+
+    <ul>
+        <?php
+        // début de la boucle
+        foreach ($rooms as $roomName) { 
+            ?>
+            <li>
+                <?php echo $roomName; ?>
             </li>
             <?php
         }
