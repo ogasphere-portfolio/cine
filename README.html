@@ -1,0 +1,94 @@
+<h1 id="exercice-places-de-cinéma">Exercice Places de cinéma</h1>
+<p>Une intégration assez simpliste a été faite pour un site du cinéma Rodia de la ville d'Haut-Cloques.  <br />
+Nous disposons des fichiers HTML et CSS.</p>
+<h2 id="etape-1">Etape 1</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Ne pas répéter le code HTML et afficher le tarif pour l'âge du capitaine (43 ans).</p>
+<h3 id="comment-faire-">Comment faire ?</h3>
+<ul>
+<li>reprendre les conditions écrites dans le challenge</li>
+<li>créer une variable <code>$age</code> avec la valeur 43</li>
+<li>afficher l'âge et le tarif dans le code HTML (<code>todo</code>)</li>
+<li>pour ne pas répéter le code source <strong>HTML</strong> dans nos fichiers, il faut utiliser l'inclusion de fichiers</li>
+</ul>
+<h2 id="etape-2">Etape 2</h2>
+<h3 id="objectif-1">Objectif</h3>
+<p>Lister tous les âges (1 à 99) et afficher à côté le tarif correspondant</p>
+<h3 id="comment-faire--1">Comment faire ?</h3>
+<ul>
+<li>écrire une boucle de 1 à 99</li>
+<li>pour chaque âge, calculer le tarif</li>
+<li>générer le code HTML pour afficher l'âge et le tarif</li>
+</ul>
+<h2 id="etape-3">Etape 3</h2>
+<h3 id="objectif-2">Objectif</h3>
+<p>Afficher la liste des films en salle</p>
+<h3 id="comment-faire--2">Comment faire ?</h3>
+<ul>
+<li>créer un fichier pour la page <code>En salle</code></li>
+<li>modifier la navigation pour faire le lien vers la page <code>En salle</code></li>
+<li>créer un tableau (array) PHP contenant la liste de 5 films actuellement en salle (=&gt; tableau de 5 titres de film)</li>
+<li>parcourir ce tableau avec la boucle <code>for</code> afin d'afficher ces 5 titres de films dans la page (HTML)</li>
+</ul>
+<h2 id="etape-4">Etape 4</h2>
+<h3 id="objectif-3">Objectif</h3>
+<p>Afficher le tarif de la carte d'abonnement 5 places pour tous les âges (1 à 99 ans)</p>
+<h3 id="comment-faire--3">Comment faire ?</h3>
+<ul>
+<li>écrire une boucle de 1 à 99</li>
+<li>pour chaque âge, calculer le tarif de la place, avec la réduction de l'abonnement</li>
+<li>le pourcentage de réduction n'est pas le même selon l'âge</li>
+<li>le pourcentage de réduction s'applique sur le tarif plein, réduit ou enfant, selon l'âge</li>
+<li>générer le code HTML pour afficher le tarif (à droite du tarif du ticket)</li>
+</ul>
+<h2 id="etape-5">Etape 5</h2>
+<h3 id="objectif-4">Objectif</h3>
+<p>Afficher les tarifs de tickets et des réductions des cartes d'abonnement dynamiquement</p>
+<h3 id="comment-faire--4">Comment faire ?</h3>
+<ul>
+<li>créer un tableau associatif contenant le nom de chaque tarif, et le montant</li>
+<li>parcourir ce tableau pour générer le même code HTML qu'avant</li>
+<li>créer un tableau associatif contenant le nom de chaque carte d'abonnement, et la réduction</li>
+<li>parcourir ce tableau pour générer le même code HTML qu'avant</li>
+</ul>
+<h2 id="etape-6">Etape 6</h2>
+<h3 id="objectif-5">Objectif</h3>
+<p>Pouvoir indiquer la diffusion de plus de 5 films dans le cinéma</p>
+<h3 id="comment-faire--5">Comment faire ?</h3>
+<ul>
+<li>ajouter un film dans le tableau de films existant</li>
+<li>modifier la ou les boucles afin que le nombre d'index/clé soit automatiquement calculé</li>
+</ul>
+<h2 id="etape-7">Etape 7</h2>
+<h3 id="objectif-6">Objectif</h3>
+<p>Mieux structurer notre code et bien respecter la séparation des concepts (déjà vu avec CSS/forme séparée de HTML/fond)</p>
+<h3 id="comment-faire--6">Comment faire ?</h3>
+<ul>
+<li>les fichiers PHP "appelés" par le navigateur ne contiennent que du PHP</li>
+<li>ces fichiers incluent les fichiers de <em>templates</em> nécessaires à générer un code source HTML correct</li>
+<li>dans les templates, il ne doit plus y avoir de calculs ou traitement, mais uniquement de la lecture</li>
+<li>effectuer les calculs dans le fichier PHP "appelé"</li>
+<li>stocker les calculs dans une ou plusieurs variables, sous forme de tableau</li>
+<li>dans la template, parcourir le tableau</li>
+</ul>
+<h2 id="bonus">Bonus</h2>
+<h3 id="objectif-7">Objectif</h3>
+<p>Afficher les horaires du diffusion du jour pour chaque film</p>
+<h3 id="comment-faire--7">Comment faire ?</h3>
+<h4 id="1-page-par-film">1 page par film</h4>
+<ul>
+<li>créer un fichier php par film</li>
+<li>modifier le tableau de films existant pour que le nom du film soit en clé et le nom du fichier php correspondant en valeur</li>
+<li>lors de l'affichage de la liste de film, mettre un lien sur chaque film (envoyant sur son fichier)</li>
+</ul>
+<h4 id="horaires-dans-chaque-page">Horaires dans chaque page</h4>
+<ul>
+<li>trouver une fonction sur la documentation PHP permettant d'afficher la date du jour au format <code>jj/mm/aaaa</code></li>
+<li>afficher la date du jour au dessus de la liste des films</li>
+<li>créer un tableau de données sur les horaires (pour chaque créneau horaire, "vrai" si diffusion, "false" sinon)</li>
+<li>générer un tableau HTML</li>
+<li>1 créneau horaire par colonne</li>
+<li>créneaux horaires de 10h à 0h</li>
+<li>créneaux horaires toutes les 2 heures</li>
+<li>le code HTML se répète d'une page "film" à l'autre ? 🤔</li>
+</ul>
